@@ -42,7 +42,7 @@ const progressdocs=new schemaDb({
     playlistName:"mongodb tutorial thapa technical",
     videoNo:12,
     topicCovered:"mongodb crud and through nodejs",
-    day:1,
+    day:2,
 })
 progressdocs.save();
 
