@@ -19,10 +19,10 @@ const addingSchema = new mongoose.Schema({
     name: String,
     username: String,
     progress: Boolean,
-    playlistName:String,
-    videoNo:Number,
-    topicCovered:String,
-    day:Number,
+    playlistName: String,
+    videoNo: Number,
+    topicCovered: String,
+    day: Number,
     date: {
         type: Date,
         default: Date.now
@@ -31,38 +31,39 @@ const addingSchema = new mongoose.Schema({
 
 // model is used to create the collection
 
-const schemaDb= new mongoose.model("schemaDb",addingSchema);
+const schemaDb = new mongoose.model("schemaDb", addingSchema);
 
 
 // making the first document
-const progressdocs=new schemaDb({
-    name:"priyam",
-    username:"priyamshankar",
-    progress:true,
-    playlistName:"mongodb tutorial thapa technical",
-    videoNo:12,
-    topicCovered:"mongodb crud and through nodejs",
-    day:2,
-})
-progressdocs.save();
+// const progressdocs=new schemaDb({
+//     name:"priyam",
+//     username:"priyamshankar",
+//     progress:true,
+//     playlistName:"mongodb tutorial thapa technical",
+//     videoNo:12,
+//     topicCovered:"mongodb crud and through nodejs",
+//     day:2,
+// })
+// progressdocs.save();
 
 
 // entering the values in the document
-async ()=>{
+const createDocument=async () => {
     try {
-        const progressdocs=new schemaDb({
-            name:"priyam",
-            username:"priyamshankar",
-            progress:false,
-            playlistName:"mongodb tutorial thapa technical",
-            videoNo:12,
-            topicCovered:"mongodb crud and through nodejs",
-            day:3,
-        })
-       await progressdocs.save();
-       console.log("document created successfully");
+        const progressdocs = new schemaDb({
+            name: "priyam",
+            username: "priyamshankar",
+            progress: false,
+            playlistName: "mongodb tutorial thapa technical",
+            videoNo: 12,
+            topicCovered: "mongodb crud and through nodejs",
+            day: 3,
+        });
+        await progressdocs.save();
+        console.log("document created successfully");
     } catch (error) {
         console.log(error);
         console.log("error in creating document");
     }
 }
+createDocument();
