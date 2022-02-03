@@ -53,11 +53,11 @@ async ()=>{
         const progressdocs=new schemaDb({
             name:"priyam",
             username:"priyamshankar",
-            progress:true,
+            progress:false,
             playlistName:"mongodb tutorial thapa technical",
             videoNo:12,
             topicCovered:"mongodb crud and through nodejs",
-            day:1,
+            day:3,
         })
        await progressdocs.save();
        console.log("document created successfully");
