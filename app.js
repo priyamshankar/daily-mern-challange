@@ -53,17 +53,27 @@ const createDocument=async () => {
         const progressdocs = new schemaDb({
             name: "priyam",
             username: "priyamshankar",
-            progress: false,
+            progress: true,
             playlistName: "mongodb tutorial thapa technical",
-            videoNo: 12,
+            videoNo: 13,
             topicCovered: "mongodb crud and through nodejs",
             day: 3,
         });
-        await progressdocs.save();
+        await progressdocs.save();      //use .insertMany([arrays of docs name ie progressdocs in this case]) instead of .save for manydocuments
         console.log("document created successfully");
     } catch (error) {
         console.log(error);
         console.log("error in creating document");
     }
 }
-createDocument();
+// createDocument();
+
+const getDocument= async()=>{
+    try{
+        const result=await schemaDb.find({progress:false }).select({videoNo:2,name:2});
+        console.log(result);
+    } catch(error){
+        console.log(error);
+    }
+};
+getDocument();
