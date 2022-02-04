@@ -6,6 +6,8 @@ app.listen(8080, () => {
     console.log("nodemon in function");
 });
 app.use(express.json());
+
+
 app.post('/postData', (req, res) => {
     res.send(`response of your get request`);
     const postData = new signinDet(req.body);
@@ -16,7 +18,9 @@ app.post('/postData', (req, res) => {
     });
     console.log(req.body);
 });
+
+
 app.get('/', (req, res) => {
     res.send(`this is the homepage`);
 })
-app.get('/postData', (req, res) => { res.send("this isthe post data page"); });
+app.get('/postData', (req, res) => { res.send("this is the post data page"); });
