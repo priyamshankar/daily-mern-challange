@@ -1,22 +1,24 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const signinDet = require("./signin");
+require("./connection");
 const app = express();
-app.listen(8080, () => {
+app.listen(8000, () => {
     console.log("nodemon in function");
 });
 app.use(express.json());
 
 
-app.post('/postData', (req, res) => {
-    res.send(`response of your get request`);
-    const postData = new signinDet(req.body);
-    postData.save().then(() => {
-        res.send(postData);
-    }).catch((err) => {
+app.post('/postData', async (req, res) => {
+    try {
+        const postData = new signinDet(req.body);
+        const saving = await postData.save();
+        console.log(req.body);
+        res.send(saving);
+    } catch (err) {
         res.send(err);
-    });
-    console.log(req.body);
+        // res.send("error");
+    }
 });
 
 
