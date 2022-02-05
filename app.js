@@ -33,20 +33,6 @@ const addingSchema = new mongoose.Schema({
 
 const schemaDb = new mongoose.model("schemaDb", addingSchema);
 
-
-// making the first document
-// const progressdocs=new schemaDb({
-//     name:"priyam",
-//     username:"priyamshankar",
-//     progress:true,
-//     playlistName:"mongodb tutorial thapa technical",
-//     videoNo:12,
-//     topicCovered:"mongodb crud and through nodejs",
-//     day:2,
-// })
-// progressdocs.save();
-
-
 // entering the values in the document
 const createDocument = async () => {
     try {
