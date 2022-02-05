@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const signinDet = require("./signin");
 require("./connection");
 const app = express();
-app.listen(8000, () => {
+app.listen(8080, () => {
     console.log("nodemon in function");
 });
 app.use(express.json());
@@ -17,9 +17,19 @@ app.post('/postData', async (req, res) => {
         res.send(saving);
     } catch (err) {
         res.send(err);
-        // res.send("error");
     }
 });
+app.post('/signin', async (req, res) => {
+    try {
+        const signData = new testSchemaMod(req.body);
+        const savingsign = await signData.save();
+        res.send(savingsign);
+        console.log(req.body);
+    } catch (error) {
+        res.send(error);
+        console.log("error in signin");
+    }
+})
 
 
 app.get('/', (req, res) => {

@@ -10,15 +10,23 @@ const mongoose = require("mongoose");
 //         console.log("connection to mongoose failed");
 //     })
 
-const schemaCred = new mongoose.Schema({
+let schemaCred = new mongoose.Schema({
     name: String,
-    userID: 
+    userID:
     {
         type: String,
-        unique:false,
+        unique: false,
     },
     password: String,
 })
-
 const signinDet = new mongoose.model("signinDet", schemaCred);
-module.exports=signinDet;
+
+const testSchema = new mongoose.Schema({
+    name: String,
+    regno: String,
+    password: Number,
+});
+const testSchemaMod = new mongoose.model("testSchemaMod", testSchema);
+
+module.exports = testSchemaMod;
+module.exports = signinDet;
