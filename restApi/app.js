@@ -27,6 +27,7 @@ app.post('/signin', async (req, res) => {
         console.log(req.body);
     } catch (error) {
         res.send(error);
+        console.log(error);
         console.log("error in signin");
     }
 })

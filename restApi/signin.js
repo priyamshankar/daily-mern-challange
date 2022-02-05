@@ -12,20 +12,16 @@ const mongoose = require("mongoose");
 
 let schemaCred = new mongoose.Schema({
     name: String,
-    userID:
-    {
-        type: String,
-        unique: false,
-    },
+    userID:String,
     password: String,
 })
-const signinDet = new mongoose.model("signinDet", schemaCred);
 
 const testSchema = new mongoose.Schema({
     name: String,
     regno: String,
     password: Number,
-});
+})
+const signinDet = new mongoose.model("signinDet", schemaCred);
 const testSchemaMod = new mongoose.model("testSchemaMod", testSchema);
 
 module.exports = testSchemaMod;
