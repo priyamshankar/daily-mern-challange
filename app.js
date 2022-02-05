@@ -55,9 +55,9 @@ const createDocument = async () => {
             username: "priyamshankar",
             progress: true,
             playlistName: "mongodb tutorial thapa technical",
-            videoNo: 20,
-            topicCovered: "crud on node, inbuilt validation",
-            day: 4,
+            videoNo: 25,
+            topicCovered: "whole api functionality",
+            day: 5,
         });
         await progressdocs.save();      //use .insertMany([arrays of docs name ie progressdocs in this case]) instead of .save for manydocuments
         console.log("document created successfully");
