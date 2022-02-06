@@ -16,13 +16,13 @@ let schemaCred = new mongoose.Schema({
     password: String,
 })
 
-const testSchema = new mongoose.Schema({
-    name: String,
-    regno: String,
-    password: Number,
-})
+// const testSchema = new mongoose.Schema({
+//     name: String,
+//     regno: String,
+//     password: Number,
+// })
 const signinDet = new mongoose.model("signinDet", schemaCred);
-const testSchemaMod = new mongoose.model("testSchemaMod", testSchema);
+// const testSchemaMod = new mongoose.model("testSchemaMod", testSchema);
 
-module.exports = testSchemaMod;
+// module.exports = testSchemaMod;
 module.exports = signinDet;
